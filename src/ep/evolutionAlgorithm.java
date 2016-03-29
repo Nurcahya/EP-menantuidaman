@@ -29,8 +29,8 @@ public class evolutionAlgorithm {
         PriorityQueue<evolutionaryDecisionTree> family = new PriorityQueue<evolutionaryDecisionTree>(4, new Comparator<evolutionaryDecisionTree>() {
             @Override
             public int compare(evolutionaryDecisionTree kromosom1, evolutionaryDecisionTree kromosom2) throws NullPointerException, ClassCastException {
-                double accuracy1 = test(kromosom1.train(), kromosom1.test());
-                double accuracy2 = test(kromosom2.train(), kromosom2.test());
+                double accuracy1 = test(kromosom1.train(), kromosom1.test(), 1);
+                double accuracy2 = test(kromosom2.train(), kromosom2.test(), 2);
                 double size1 = kromosom1.train().size();
                 double size2 = kromosom2.train().size();
                 if ((accuracy1 - size1) < (accuracy2 - size2)) {
@@ -49,7 +49,7 @@ public class evolutionAlgorithm {
         return family;
     }
 
-    public double test(ArrayList<ArrayList<Node>> tree, ArrayList<Node> data) {
+    public double test(ArrayList<ArrayList<Node>> tree, ArrayList<Node> data, int urutan) {
         double right = 0;
         double wrong = 0;
         for (Node d : data) {
@@ -85,8 +85,8 @@ public class evolutionAlgorithm {
                 wrong++;
             }
         }
-        System.out.println("Accuracy:\t" + right/(right + wrong));
-        //System.out.println("Precision:\t" + right/(right + wrong));
+        System.out.println("Accuracy individu "+urutan+":\t" + right/(right + wrong));
+        System.out.println("Fitness individu "+urutan+":\t" +wrong);
         return right/(right + wrong);
     }
 }
