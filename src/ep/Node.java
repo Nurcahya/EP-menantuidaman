@@ -2,9 +2,6 @@ package ep;
 
 import java.util.ArrayList;
 
-/**
- * Created by Barbara on 3/30/2015.
- */
 public class Node {
     String label, ID;
     ArrayList<Integer> features = new ArrayList<Integer>();
