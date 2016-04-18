@@ -180,10 +180,7 @@ public class EvolutionaryProgramming {
       return( ++buffercounter );
       }
     else if ( buffer[buffercounter] == FSET_START ) {
-        System.out.print("ditolak -> ");
-    }
-    else  {
-        System.out.print("diterima -> ");
+        System.out.print(" diterima ");
     }
     switch(buffer[buffercounter]) {
       case ROH: System.out.print( "(");
@@ -253,8 +250,8 @@ public class EvolutionaryProgramming {
     }
     avg_len = (double) node_count / POPSIZE;
     favgpop /= POPSIZE;
-    System.out.print("Generasi="+gen+" Rata-rata Fitness="+(-favgpop)+
-    		 " Best Fitness="+(-fbestpop)+" Rata-rata ukuran="+avg_len+
+    System.out.print("--------------------------------------------- \nGenerasi="+gen+"\nRata-rata Fitness="+(-favgpop)+
+    		 "\nBest Fitness="+(-fbestpop)+" \nRata-rata ukuran="+avg_len+
     		 "\nBest Individu: ");
     print_indiv( pop[best], 0 );
     System.out.print( "\n");
