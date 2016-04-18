@@ -83,7 +83,7 @@ public class EvolutionaryProgramming {
     return( 0 ); 
   }
 
-  void setup_fitness(String fname) {
+  void inisialisasi(String fname) {
     try {
       int i,j;
       String line;
@@ -96,7 +96,7 @@ public class EvolutionaryProgramming {
       StringTokenizer tokens = new StringTokenizer(line);
       varnumber = Integer.parseInt(tokens.nextToken().trim());
       randomnumber = Integer.parseInt(tokens.nextToken().trim());
-      minrandom =	Double.parseDouble(tokens.nextToken().trim());
+      minrandom =  Double.parseDouble(tokens.nextToken().trim());
       maxrandom =  Double.parseDouble(tokens.nextToken().trim());
       fitnesscases = Integer.parseInt(tokens.nextToken().trim());
       targets = new double[fitnesscases][varnumber+1];
@@ -304,13 +304,13 @@ public class EvolutionaryProgramming {
     seed = 1;
     if ( seed >= 0 )
         rd.setSeed(seed);
-    setup_fitness(fname);
+    inisialisasi(fname);
     for ( int i = 0; i < FSET_START; i ++ )
       x[i]= (maxrandom-minrandom)*rd.nextDouble()+minrandom;    
     pop = create_random_pop(POPSIZE, DEPTH, fitness );
   }
 
-  void evolve(int genr) {
+  void evaluasi(int genr) {
     int gen = 0, indivs, offspring, parent1, parent2, parent;
     double newfit;
     char []newind;
@@ -318,7 +318,7 @@ public class EvolutionaryProgramming {
     stats( fitness, pop, 0 );
     for ( gen = 1; gen < genr; gen ++ ) {
       if (  fbestpop > -1e-5 ) {
-      System.out.print("PROBLEM SOLVED\n");
+      //System.out.print("PROBLEM SOLVED\n");
       System.exit( 0 );
       }
       for ( indivs = 0; indivs < POPSIZE; indivs ++ ) {
