@@ -8,4 +8,5 @@ Pembuatan evolutionary programming untuk menentukan tingkat kecocokan menantu id
 -Ketampanan<br />
 -Pekerjaan<br />
 -Keturunan<br />
-Dari keempat parameter tersebut kemudian akan direpresentasikan kedalam decision tree sehingga dapat ditentukan apakah orang tersebut "diterima" atau "ditolak" sebagai menantu
+Dari keempat parameter tersebut kemudian akan direpresentasikan kedalam decision tree sehingga dapat ditentukan apakah orang tersebut "diterima" atau "ditolak" sebagai menantu<br />
+Untuk detail selengkapnya dapat dibaca pada file PDF terlampir.
