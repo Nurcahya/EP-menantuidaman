@@ -69,7 +69,7 @@ public class EvolutionaryProgramming {
     return( 0.0 ); 
   }
           
-  int traverse( char [] buffer, int buffercount ) {
+  static int traverse( char [] buffer, int buffercount ) {
     if ( buffer[buffercount] < FSET_START )
       return( ++buffercount );
     
@@ -286,32 +286,7 @@ public class EvolutionaryProgramming {
     return( worst );
   }
   
-  char [] mutation( char [] parent, double pmut ) {
-    int len = traverse( parent, 0 ), i;
-    int mutsite;
-    char [] parentcopy = new char [len];
-    
-    System.arraycopy( parent, 0, parentcopy, 0, len );
-    for (i = 0; i < len; i ++ ) {  
-      if ( rd.nextDouble() < pmut ) {
-      mutsite =  i;
-      if ( parentcopy[mutsite] < FSET_START )
-        parentcopy[mutsite] = (char) rd.nextInt(varnumber+randomnumber);
-      else
-        switch(parentcopy[mutsite]) {
-      	case ROH: 
-      	case TAM: 
-      	case PEK: 
-      	case KET:
-           parentcopy[mutsite] = 
-              (char) (rd.nextInt(FSET_END - FSET_START + 1) 
-                     + FSET_START);
-        }
-      }
-    }
-    return( parentcopy );
-  }
-  
+ 
   void print_parms() {
    System.out.print("Parameter : \n");
    System.out.print("SEED="+seed+"\nMAX_LEN="+MAX_LEN+
@@ -348,7 +323,8 @@ public class EvolutionaryProgramming {
       }
       for ( indivs = 0; indivs < POPSIZE; indivs ++ ) {
       parent = tournament( fitness, TSIZE );
-      newind = mutation( pop[parent], PMUT_PER_NODE );
+      Mutasi mut = new Mutasi();
+      newind = mut.mutasi(pop[parent], PMUT_PER_NODE );
       newfit = fitness_function( newind );
       offspring = negative_tournament( fitness, TSIZE );
       pop[offspring] = newind;
