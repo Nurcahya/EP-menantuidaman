@@ -1,8 +1,8 @@
 # EP-menantuidaman
 -----
 <b>Tugas Kecerdasan Komputasional - A<br />
-Nurcahya Pradana T.P. </b>(15/388492/PPA/04931)
-<br /><br />
+Nurcahya Pradana T.P. <br />(15/388492/PPA/04931)
+<b/><br /><br />
 Pembuatan evolutionary programming untuk menentukan tingkat kecocokan menantu idaman berdasarkan parameter yang diberikan, yakni:<br />
 -Kerohanian<br />
 -Ketampanan<br />
