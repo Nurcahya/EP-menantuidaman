@@ -40,34 +40,7 @@ public class EvolutionaryProgramming {
     CROSSOVER_PROB = 0.9;
   static double [][] targets;
 
-  double run() {
-    char primitive = program[PC++];
-    if ( primitive < FSET_START )
-      return(x[primitive]);
-    switch ( primitive ) {
-      case ROH : {
-                double edge1 = run(), edge2 = run();
-                if (edge1 <= edge2) return( edge1 );
-                else return (edge2);
-            }
-      case TAM : {
-                double edge1 = run(), edge2 = run();
-                if (edge1 <= edge2) return( edge1 );
-                else return (edge2);
-            }
-      case PEK : {
-                double edge1 = run(), edge2 = run();
-                if (edge1 <= edge2) return( edge1 );
-                else return (edge2);
-            }
-      case KET : {
-                double edge1 = run(), edge2 = run();
-                if (edge1 <= edge2) return( edge1 );
-                else return (edge2);
-            }
-      }
-    return( 0.0 ); 
-  }
+  
           
   static int traverse( char [] buffer, int buffercount ) {
     if ( buffer[buffercount] < FSET_START )
@@ -132,7 +105,8 @@ public class EvolutionaryProgramming {
           x[j] = targets[i][j];
       program = Prog;
       PC = 0;
-      result = run();
+      PilihEdge edge = new PilihEdge();
+      result = edge.run();
       fit += Math.abs( result - targets[i][varnumber]);
       }
     return(-fit );
@@ -335,23 +309,4 @@ public class EvolutionaryProgramming {
    // System.out.print("PROBLEM *NOT* SOLVED\n");
     //System.exit( 1 );
   }
-
-//  public static void main(String[] args) {
-//    String fname = "/data/problem.dat";
-//    String folder = System.getProperty("user.dir");
-//    folder = folder.replace("src", "/");
-//    String lokasiFile = folder + fname;   
-//    long s = -1;
-//    
-//    if ( args.length == 2 ) {
-//      s = Integer.valueOf(args[0]).intValue();
-//      lokasiFile = args[1];
-//    }
-//    if ( args.length == 1 ) {
-//      lokasiFile = args[0];
-//    }
-//    
-//    EvolutionaryProgramming gp = new EvolutionaryProgramming(lokasiFile, s);
-//    gp.evolve();
-//  }
 };
