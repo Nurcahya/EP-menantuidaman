@@ -2,7 +2,7 @@
 -----
 <b>Tugas Kecerdasan Komputasional - A<br />
 Nurcahya Pradana T.P. <br />(15/388492/PPA/04931)
-<b/><br /><br />
+</b><br /><br />
 Pembuatan evolutionary programming untuk menentukan tingkat kecocokan menantu idaman berdasarkan parameter yang diberikan, yakni:<br />
 -Kerohanian<br />
 -Ketampanan<br />
